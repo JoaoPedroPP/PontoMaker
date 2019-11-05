@@ -1,0 +1,15 @@
+{
+  "name": "makerpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-electron": "electron ."
+  },
+  "author": "JoaoPedroPP",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^7.0.1"
+  }
+}

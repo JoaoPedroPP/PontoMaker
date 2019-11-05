@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./index.css">
+    </head>
+    <body>
+        <div class="comp">
+            <div class="puzzle header">
+                <h1 class="texts">Mark your time</h1>
+            </div>
+            <div class="puzzle clock">
+                <h3 id="relogio" class="texts"></h3>
+            </div>
+            <div class="mark">
+                <!-- <button>Mark now!!!</button> -->
+                <label id="thelabel" class="mark-label" for="thebutton">Mark now!!!</label>
+                <button id="thebutton" style="display: none;" onclick="show()">wdqw</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            const electron = require('electron');
+            const { ipcRenderer } = electron;
+
+            ipcRenderer.on('time', (ev, data) => {
+                document.getElementById('relogio').innerHTML = data
+            })
+
+            ipcRenderer.on('recorded', (ev, data) => {
+                document.getElementById('thelabel').innerHTML = 'Marked!!!'
+                setTimeout(() => {
+                    document.getElementById('thelabel').innerHTML = 'Mark now!!!'
+                }, 1000);
+            });
+            function show() {
+                ipcRenderer.send('mark', 'ping')
+            }
+        </script>
+    </body>
+</html>

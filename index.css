@@ -1,0 +1,27 @@
+body {
+    height: 100vh;
+}
+.comp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.clock{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 50px;
+}
+
+.mark {
+    margin-top: 20%;
+    border: 3px solid black;
+    padding: 5%;
+}
+.mark-label {
+    font-size: 40px;
+}
